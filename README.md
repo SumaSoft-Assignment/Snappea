@@ -1,24 +1,43 @@
-# README
+# Snappea
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version 2.3
 
-Things you may want to cover:
+Rails Version 5.0
 
-* Ruby version
+ ```
+     bundle install
 
-* System dependencies
+     rake db:migrate
 
-* Configuration
+     rke db:seed
+ ```
 
-* Database creation
+## Note
+You can use Chrome Rest Console/Postman to run and check the output of api.
 
-* Database initialization
+### API Document
+1. Get list of restaurants for valid client
 
-* How to run the test suite
+  URL: /api/v1/restaurants
+  Method:  GET
+  header: 'Authorization' = API KEY
+  params:  page = 1
+  Response:
+     failuer: { success: false, error: 'error message', data: [] }
+     success: { success: true, error: '', data: 'list of restaurants' }
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Get menu of a restaurant
 
-* Deployment instructions
+  URL: /api/v1/restaurants/:id/menu_list
+  Method: GET
+  header: 'Authorization' = API KEY
+  params: page=1
+  Response:
+    failuer: { success: false, error: 'error message', data: [] }
+    success: { success: true, error: '', data: 'menu list' }
 
-* ...
+
+## To run the test-cases use following command:
+ ```
+    rspec spec spec/controllers/api/v1/restaurants_controller_spec.rb
+ ```
