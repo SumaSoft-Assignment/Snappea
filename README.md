@@ -18,6 +18,7 @@ You can use Chrome Rest Console/Postman to run and check the output of api.
 ### API Document
 1. Get list of restaurants for valid client
 
+ ```
   URL: /api/v1/restaurants
   Method:  GET
   header: 'Authorization' = API KEY
@@ -25,9 +26,10 @@ You can use Chrome Rest Console/Postman to run and check the output of api.
   Response:
      failuer: { success: false, error: 'error message', data: [] }
      success: { success: true, error: '', data: 'list of restaurants' }
-
+ ```
+ 
 2. Get menu of a restaurant
-
+ ```
   URL: /api/v1/restaurants/:id/menu_list
   Method: GET
   header: 'Authorization' = API KEY
@@ -35,6 +37,7 @@ You can use Chrome Rest Console/Postman to run and check the output of api.
   Response:
     failuer: { success: false, error: 'error message', data: [] }
     success: { success: true, error: '', data: 'menu list' }
+ ```
 
 
 ## To run the test-cases use following command:
